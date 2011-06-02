@@ -86,7 +86,7 @@ Here is an example obserer
 
   class TodoObserver < ActiveRecord::Observer
 
-    def initial_version_create(todo)
+    def initial_version_created(todo)
       # this is essentially the same as the `after_create` callback
     end
 
