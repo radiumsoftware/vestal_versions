@@ -84,20 +84,20 @@ useful for creating activity feeds. <tt>vestal_versions</tt> provides three even
 
 Here is an example obserer
 
-    class TodoObserver < ActiveRecord::Observer
+  class TodoObserver < ActiveRecord::Observer
 
-      def initial_version_create(todo)
-        # this is essentially the same as the `after_create` callback
-      end
-
-      def version_created(todo)
-        # called whenever version criteria are met
-      end
-
-      def deleted_version_created(todo)
-        # called before the record is deleted if you're tracking deletions
-      end
+    def initial_version_create(todo)
+      # this is essentially the same as the `after_create` callback
     end
+
+    def version_created(todo)
+      # called whenever version criteria are met
+    end
+
+    def deleted_version_created(todo)
+      # called before the record is deleted if you're tracking deletions
+    end
+  end
 
 
 == Upgrading to 1.0
