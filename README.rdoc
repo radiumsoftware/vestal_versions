@@ -76,11 +76,11 @@ It's that easy! Now watch it in action...
 == Observers
 
 <tt>vestal_versions</tt> also provides obsever methods so you can tie into the version lifecycle. This is especially
-useful for creating activity feeds. <tt>vestial_versions</tt> provides three events
+useful for creating activity feeds. <tt>vestal_versions</tt> provides three events
 
 * <tt>initial_version_created</tt>: Called if you are have intiial version tracking
 * <tt>version_created</tt>: Called whenever certia for creating a new version is met
-* <tt>deleted_version_created</ttd>: Called if you have deletion tracking. 
+* <tt>deleted_version_created</tt>: Called if you have deletion tracking. 
 
 Here is an example obserer
 
