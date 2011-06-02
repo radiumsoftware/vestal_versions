@@ -72,6 +72,34 @@ It's that easy! Now watch it in action...
   >> u.version
   => 5
 
+
+== Observers
+
+<tt>vestal_versions</tt> also provides obsever methods so you can tie into the version lifecycle. This is especially
+useful for creating activity feeds. <tt>vestial_versions</tt> provides three events
+
+* <tt>initial_version_created</tt>: Called if you are have intiial version tracking
+* <tt>version_created</tt>: Called whenever certia for creating a new version is met
+* <tt>deleted_version_created</ttd>: Called if you have deletion tracking. 
+
+Here is an example obserer
+
+    class TodoObserver < ActiveRecord::Observer
+
+      def initial_version_create(todo)
+        # this is essentially the same as the `after_create` callback
+      end
+
+      def version_created(todo)
+        # called whenever version criteria are met
+      end
+
+      def deleted_version_created(todo)
+        # called before the record is deleted if you're tracking deletions
+      end
+    end
+
+
 == Upgrading to 1.0
 
 For the most part, version 1.0 of <tt>vestal_versions</tt> is backwards compatible, with just a few notable changes:
