@@ -2,6 +2,7 @@ require 'bundler'
 require 'rspec/core/rake_task'
 
 Bundler::GemHelper.install_tasks
+
 RSpec::Core::RakeTask.new(:spec)
 
 task :default => :spec
@@ -25,7 +26,6 @@ else
       RSpec::Core::Runner.disable_autorun!
       RSpec::Core::Runner.run [spec_dir], STDERR, STDOUT
     end
-
   end
 end
 

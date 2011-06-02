@@ -38,6 +38,7 @@ module VestalVersions
   autoload :Creation
   autoload :Deletion
   autoload :Options
+  autoload :Observing
   autoload :Reload
   autoload :Reset
   autoload :Reversion
@@ -116,6 +117,7 @@ module VestalVersions
       include VersionTagging
       include Reload
       include Deletion
+      include Observing
 
       prepare_versioned_options(options)
       has_many :versions, options, &block
