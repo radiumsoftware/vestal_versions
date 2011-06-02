@@ -21,7 +21,7 @@ module VestalVersions
         self.vestal_versions_options[:only] = Array(options.delete(:only)).map(&:to_s).uniq if options[:only]
         self.vestal_versions_options[:except] = Array(options.delete(:except)).map(&:to_s).uniq if options[:except]
         self.vestal_versions_options[:initial_version] = options.delete(:initial_version)
-        
+
         result
       end
     end
@@ -40,7 +40,7 @@ module VestalVersions
           reset_version_changes
           reset_version
         end
-                
+
         # Returns whether a new version should be created upon updating the parent record.
         def create_version?
           !version_changes.blank?
