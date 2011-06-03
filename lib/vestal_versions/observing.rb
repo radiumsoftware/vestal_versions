@@ -13,6 +13,7 @@ module VestalVersions
     module InstanceMethods
       private
       def notify_observers_of_created_version
+        self.class.changed
         self.class.notify_observers(:version_created, self)
       end
     end
