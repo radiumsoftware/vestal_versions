@@ -13,7 +13,7 @@ module VestalVersions
     module InstanceMethods
       private
       def notify_observers_of_created_version
-        return if marked_for_destruction?
+        return if destroyed?
         self.class.changed
         self.class.notify_observers(:version_created, self)
       end
