@@ -16,6 +16,7 @@ module VestalVersions
         return if destroyed?
         self.class.changed
         self.class.notify_observers(:version_created, self)
+        true
       end
 
       def initial_version?
